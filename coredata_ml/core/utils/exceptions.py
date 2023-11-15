@@ -1,0 +1,2 @@
+class CoreDataXMLSyntaxErrorSentryIgnored(Exception):
+    pass
