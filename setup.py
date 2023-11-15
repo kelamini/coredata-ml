@@ -14,12 +14,12 @@ with open('requirements.txt') as f:
 setuptools.setup(
     name=coredata_ml.package_name,
     version=coredata_ml.__version__,
-    author='Heartex',
-    author_email="hello@heartex.com",
+    author='kelamini',
+    author_email="kelamini_0216@163.com",
     description='Core Data ML backend',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/heartexlabs/label-studio-ml-backend',
+    url='https://github.com/kelamini/coredata-ml.git',
     packages=setuptools.find_packages(),
     include_package_data=True,
     classifiers=[

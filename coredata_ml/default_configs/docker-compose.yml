@@ -3,7 +3,7 @@ version: "3.8"
 services:
   ml-backend:
     container_name: ml-backend
-    image: humansignal/ml-backend:v0
+    image: kelamini/ml-backend:v0
     build: .
     environment:
       - MODEL_DIR=/data/models
