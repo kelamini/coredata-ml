@@ -1,7 +1,7 @@
 ## What is the Label Studio ML backend?
 
-The Label Studio ML backend is an SDK that lets you wrap your machine learning code and turn it into a web server.
-The web server can be then connected to Label Studio to automate labeling tasks and dynamically retrieve pre-annotations from your model.
+The Core Data ML backend is an SDK that lets you wrap your machine learning code and turn it into a web server.
+The web server can be then connected to Core Data 2D Images to automate labeling tasks and dynamically retrieve pre-annotations from your model.
 
 There are several use-cases for the ML backend:
 
@@ -10,8 +10,6 @@ There are several use-cases for the ML backend:
 - Interactive (AI-assisted) labeling
 - Model fine-tuning based on recently annotated data
 
-If you just need to load static pre-annotated data into Label Studio, running an ML backend might be overkill for you. Instead, you can [import preannotated data](https://labelstud.io/guide/predictions.html).
-
 
 ## Quickstart
 
@@ -19,15 +17,15 @@ Follow this example tutorial to create a ML backend service:
 
 1. Install the latest Label Studio ML SDK:
    ```bash
-   git clone https://github.com/HumanSignal/label-studio-ml-backend.git
-   cd label-studio-ml-backend/
-   pip install -e .
+   git clone https://github.com/kelamini/coredata-ml.git
+   cd coredata-ml/
+   pip install -v -e .
    ```
    
 2. Create a new ML backend directory:
     
    ```bash
-   label-studio-ml create my_ml_backend
+   coredata-ml create my_ml_backend
    ```
    You can go to the `my_ml_backend` directory and modify the code to implement your own inference logic.
    The directory structure should look like this:
@@ -104,14 +102,14 @@ Other methods and parameters are available within the `LabelStudioMLBase` class:
 
 To run without docker (for example, for debugging purposes), you can use the following command:
 ```bash
-pip install -r my_ml_backend
-label-studio-ml start my_ml_backend
+pip install -r my_ml_backend/requirements.txt
+coredata-ml start my_ml_backend
 ```
 
 ### Modify the port
 To modify the port, use the `-p` parameter:
 ```bash
-label-studio-ml start my_ml_backend -p 9091
+coredata-ml start my_ml_backend -p 9091
 ```
 
 ## Deploy your ML backend to GCP
@@ -131,7 +129,7 @@ To start deployment:
 1. Create your own ML backend
 2. Start deployment to GCP:
 ```bash
-label-studio-ml deploy gcp {ml-backend-local-dir} \
+coredata-ml deploy gcp {ml-backend-local-dir} \
 --from={model-python-script} \
 --gcp-project-id {gcp-project-id} \
 --label-studio-host {https://app.heartex.com} \

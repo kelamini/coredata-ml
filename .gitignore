@@ -133,4 +133,6 @@ dmypy.json
 *.pth
 *.onnx
 
+# data
 data/
+*.db
